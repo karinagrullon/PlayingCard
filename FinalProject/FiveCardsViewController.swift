@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  FiveCardsViewController.swift
 //  FinalProject
 //
-//  Created by Melida Grullon on 12/14/19.
+//  Created by Melida Grullon on 12/17/19.
 //  Copyright © 2019 Melida Grullon. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class FiveCardsViewController: UIViewController {
+
     private var deck = PlayingCardDeck()
     lazy var game = CardGame()
     var counter = 0
@@ -35,14 +35,6 @@ class ViewController: UIViewController {
         
         if balanceAmount <= 0 {
             print("Game is Over!!! No more money left to bet")
-            
-            // disable bet button
-            betButton.isEnabled = false
-            betButton.backgroundColor = UIColor.gray
-            
-            // disable deal button
-            dealButton.isEnabled = false
-            dealButton.backgroundColor = UIColor.gray
         }
         
         betAmount = game.increaseBet()
@@ -50,20 +42,9 @@ class ViewController: UIViewController {
         
         game.turn = "computer"
     }
-  
+    
     @IBAction func gameDealButton(_ sender: UIButton) {
-        
-        if balanceAmount <= 0 {
-            print("Game is Over!!! No more money left to bet")
-            
-            // disable bet button
-            betButton.isEnabled = false
-            betButton.backgroundColor = UIColor.gray
-            
-            // disable deal button
-            dealButton.isEnabled = false
-            dealButton.backgroundColor = UIColor.gray
-        }
+        // game = CardGame()  // creating new instance of the game
         
         if game.turn == "player" {
             playerScore = 0 // set new players turn player score to 0
@@ -72,9 +53,8 @@ class ViewController: UIViewController {
         // enable bet button
         betButton.isEnabled = true
         betButton.backgroundColor = UIColor(red: 0/255, green: 143/255, blue: 0/255, alpha: 1)
-        
+
         viewDidLoad()
-        
     }
     
     @IBAction func gameResetButton(_ sender: UIButton) {
@@ -84,7 +64,6 @@ class ViewController: UIViewController {
         computerScore = 0
         balanceAmount = 100
         betAmount = 0
-        game.turn = "player"
         
         // face down computer cards
         if computerCards.count != 0 {
@@ -168,12 +147,12 @@ class ViewController: UIViewController {
                 dealButton.backgroundColor = UIColor.gray
                 
             } else {
-            
+                
                 for _ in 1...((cardViews.count+1/2)) {
                     let card = deck.draw()!
                     cards += [card, card]
                 }
-
+                
                 if counter != 0 { // if it is not first turn
                     for cardView in cardViews {
                         
@@ -191,7 +170,7 @@ class ViewController: UIViewController {
                         groupCards.append(card.gameScore(suit: card.suit.order, rank: cardView.rank))
                     }
                     
-
+                    
                 } else {
                     // First turn
                     for cardView in cardViews {
@@ -208,7 +187,7 @@ class ViewController: UIViewController {
                     betButton.isEnabled = false
                     betButton.backgroundColor = UIColor.gray
                 }
-            
+                
                 if (counter != 0) {
                     // disable deal button
                     dealButton.isEnabled = false
@@ -220,26 +199,26 @@ class ViewController: UIViewController {
         } else if (game.turn == "computer") {
             
             if cardViews != nil {
-
+                
                 for _ in 1...((computerCardViews.count+1/2)) {
                     let card = deck.draw()!
                     cards += [card, card]
                 }
-            
-                    for computerCardView in computerCardViews {
-                        
-                        // add animations
-                        flipCardUpAnimation(viewName: computerCardView)
-                        
-                        let card = cards.remove(at: cards.count.arc4random)
-                        computerCardView.rank = card.rank.order
-                        computerCardView.suit = card.suit.rawValue
-                        
-                        computerCards.append(computerCardView)
-                        
-                        computerScore += card.gameScore(suit: card.suit.order, rank: computerCardView.rank)
-                    }
                 
+                for computerCardView in computerCardViews {
+                    
+                    // add animations
+                    flipCardUpAnimation(viewName: computerCardView)
+                    
+                    let card = cards.remove(at: cards.count.arc4random)
+                    computerCardView.rank = card.rank.order
+                    computerCardView.suit = card.suit.rawValue
+                    
+                    computerCards.append(computerCardView)
+                    
+                    computerScore += card.gameScore(suit: card.suit.order, rank: computerCardView.rank)
+                }
+
                 balanceAmount = balanceAmount + game.compareBothScores(playerScore: playerScore, computerScore: computerScore, betAmount: betAmount)
                 
                 // reseting bet to 0
@@ -253,17 +232,17 @@ class ViewController: UIViewController {
                 game.turn = "player"
                 
                 
-                } else {
+            } else {
                 
-                    // disable bet button
-                    betButton.isEnabled = false
-                    betButton.backgroundColor = UIColor.gray
-                }
+                // disable bet button
+                betButton.isEnabled = false
+                betButton.backgroundColor = UIColor.gray
+            }
         }
         
     }
-
-
+    
+    
     func flipCardUpAnimation(viewName: PlayingCardView) {
         UIView.transition(with: viewName,
                           duration: 0.6,
@@ -284,16 +263,18 @@ class ViewController: UIViewController {
                           completion: nil)
     }
     
-
+    
     @IBOutlet var cardViews: [PlayingCardView]!
     
+   
     @IBOutlet var computerCardViews: [PlayingCardView]!
+    
     
     @IBOutlet weak var playingCardView: PlayingCardView! {
         didSet {
-           
+            
             let swipe = UISwipeGestureRecognizer(target: self,
-                                                     action: #selector(nextCard))
+                                                 action: #selector(nextCard))
             swipe.direction = [.right]
             playingCardView.addGestureRecognizer(swipe)
         }
@@ -305,20 +286,20 @@ class ViewController: UIViewController {
             playingCardView.rank = card.rank.order
             playingCardView.suit = card.suit.rawValue
             playerScore += (card.gameScore(suit: card.suit.order, rank: card.rank.order) - groupCards[0])
-           
+            
         }
     }
     
     
     
     @IBOutlet weak var playingCardViewTwo: PlayingCardView! {
-    didSet {
-        let swipe = UISwipeGestureRecognizer(target: self,
-        action: #selector(nextCardTwo))
-        swipe.direction = [.right]
-        playingCardViewTwo.addGestureRecognizer(swipe)
+        didSet {
+            let swipe = UISwipeGestureRecognizer(target: self,
+                                                 action: #selector(nextCardTwo))
+            swipe.direction = [.right]
+            playingCardViewTwo.addGestureRecognizer(swipe)
+        }
     }
-}
     
     @objc private func nextCardTwo() {
         if let card = deck.draw() {
@@ -345,18 +326,42 @@ class ViewController: UIViewController {
             playerScore += (card.gameScore(suit: card.suit.order, rank: card.rank.order) - groupCards[2])
         }
     }
-}
-
-
-extension CGFloat {
-    var arc4random: CGFloat {
-        if self > 0 {
-            return CGFloat(arc4random_uniform(UInt32(self)))
-        } else if self < 0 {
-            return -CGFloat(arc4random_uniform(UInt32(abs(self))))
-        } else {
-            return 0
+    
+    
+    @IBOutlet weak var playingCardViewFour: PlayingCardView! {
+        didSet {
+            let swipe = UISwipeGestureRecognizer(target: self,
+                                                 action: #selector(nextCardFour))
+            swipe.direction = [.right]
+            playingCardViewFour.addGestureRecognizer(swipe)
         }
     }
+    
+    @objc private func nextCardFour() {
+        if let card = deck.draw() {
+            playingCardViewFour.rank = card.rank.order
+            playingCardViewFour.suit = card.suit.rawValue
+            playerScore += (card.gameScore(suit: card.suit.order, rank: card.rank.order) - groupCards[2])
+        }
+    }
+    
+    
+    @IBOutlet weak var playingCardViewFive: PlayingCardView! {
+        didSet {
+            let swipe = UISwipeGestureRecognizer(target: self,
+                                                 action: #selector(nextCardFive))
+            swipe.direction = [.right]
+            playingCardViewFive.addGestureRecognizer(swipe)
+        }
+    }
+    
+    @objc private func nextCardFive() {
+        if let card = deck.draw() {
+            playingCardViewFive.rank = card.rank.order
+            playingCardViewFive.suit = card.suit.rawValue
+            playerScore += (card.gameScore(suit: card.suit.order, rank: card.rank.order) - groupCards[2])
+        }
+    }
+    
+    
 }
-

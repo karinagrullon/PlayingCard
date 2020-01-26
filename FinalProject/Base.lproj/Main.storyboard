@@ -1,24 +1,429 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uei-ak-Ulz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="8zK-bK-Cuk">
+            <objects>
+                <tabBarController id="uei-ak-Ulz" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rBA-Vz-hX7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="sX6-We-YSr"/>
+                        <segue destination="VYU-Ce-quW" kind="relationship" relationship="viewControllers" id="u1p-ho-h82"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ND-9z-tPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1028" y="717"/>
+        </scene>
+        <!--Five Cards-->
+        <scene sceneID="NVw-9Q-qny">
+            <objects>
+                <viewController id="VYU-Ce-quW" customClass="FiveCardsViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AN0-HP-e63">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-7Z-J5z">
+                                <rect key="frame" x="16" y="20" width="343" height="588"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="poq-I3-eSH">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAYER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uud-48-puC">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" red="0.35583498316001971" green="0.29045143009060137" blue="0.63723429568527923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Erc-xN-oqU">
+                                        <rect key="frame" x="0.0" y="84" width="343" height="84"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQU-84-Sn4" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="52.5" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XA3-5M-gAq" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="72.5" y="0.0" width="52.5" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pK-bX-FNs" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="145" y="0.0" width="53" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVh-3x-94I" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="218" y="0.0" width="52.5" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSR-0a-xed" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="290.5" y="0.0" width="52.5" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-65-mRn">
+                                        <rect key="frame" x="0.0" y="168" width="343" height="84"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3z-VV-lCS">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyE-dP-aIR">
+                                                <rect key="frame" x="116" y="0.0" width="111" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bet: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxV-Hp-zXs">
+                                                <rect key="frame" x="232" y="0.0" width="111" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KNj-Kd-wIB">
+                                        <rect key="frame" x="0.0" y="252" width="343" height="84"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPUTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXn-8r-MOC">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" red="0.35583498320000001" green="0.29045143010000002" blue="0.63723429570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sGi-NE-iCL">
+                                        <rect key="frame" x="0.0" y="336" width="343" height="84"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypc-k2-5Z3" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="52.5" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEF-o8-fnF" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="72.5" y="0.0" width="52.5" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htU-qU-rcS" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="145" y="0.0" width="53" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KN-H1-2h8" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="218" y="0.0" width="52.5" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57C-uR-YkB" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="290.5" y="0.0" width="52.5" height="84"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-yN-VSr">
+                                        <rect key="frame" x="0.0" y="420" width="343" height="84"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZV-z4-2mB">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="84"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wKv-gP-Rhn">
+                                        <rect key="frame" x="0.0" y="504" width="343" height="84"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpm-jn-PgI">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="84"/>
+                                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="DEAL">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gameDealButton:" destination="VYU-Ce-quW" eventType="touchUpInside" id="I61-AX-zC4"/>
+                                                    <action selector="gameDealButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pnh-xJ-EX5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rO8-ct-kam">
+                                                <rect key="frame" x="116" y="0.0" width="111" height="84"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="BET">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gameBetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uox-ad-Txn"/>
+                                                    <action selector="gameBetButton:" destination="VYU-Ce-quW" eventType="touchUpInside" id="qlJ-jh-kDm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1Z-DM-Ifv">
+                                                <rect key="frame" x="232" y="0.0" width="111" height="84"/>
+                                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="RESET">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gameResetButton:" destination="VYU-Ce-quW" eventType="touchUpInside" id="WW4-1s-iwk"/>
+                                                    <action selector="gameResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssl-8J-ojr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.88653630386359317" blue="0.8859511725813094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xBA-4s-ZAu" firstAttribute="bottom" secondItem="jcI-7Z-J5z" secondAttribute="bottom" constant="10" id="7Qh-7D-VZC"/>
+                            <constraint firstItem="xBA-4s-ZAu" firstAttribute="trailing" secondItem="jcI-7Z-J5z" secondAttribute="trailing" constant="16" id="aDp-ZC-3xT"/>
+                            <constraint firstItem="jcI-7Z-J5z" firstAttribute="leading" secondItem="xBA-4s-ZAu" secondAttribute="leading" constant="16" id="gsr-Sj-idf"/>
+                            <constraint firstItem="jcI-7Z-J5z" firstAttribute="top" secondItem="xBA-4s-ZAu" secondAttribute="top" id="vg2-xk-3nc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xBA-4s-ZAu"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Five Cards" id="oup-kB-vPs"/>
+                    <connections>
+                        <outlet property="betButton" destination="rO8-ct-kam" id="01o-iq-44G"/>
+                        <outlet property="computerScoreLabel" destination="FZV-z4-2mB" id="PdK-zL-6qw"/>
+                        <outlet property="dealButton" destination="gpm-jn-PgI" id="4m8-1x-frF"/>
+                        <outlet property="gameBalanceLabel" destination="HyE-dP-aIR" id="8vh-he-JLH"/>
+                        <outlet property="gameBetLabel" destination="XxV-Hp-zXs" id="M12-Kh-LYp"/>
+                        <outlet property="playerScoreLabel" destination="n3z-VV-lCS" id="6e9-Ef-EL5"/>
+                        <outlet property="playingCardView" destination="QQU-84-Sn4" id="X5z-nE-XFr"/>
+                        <outlet property="playingCardViewFive" destination="hSR-0a-xed" id="jSd-jc-vvx"/>
+                        <outlet property="playingCardViewFour" destination="EVh-3x-94I" id="f8A-wR-Hsv"/>
+                        <outlet property="playingCardViewThree" destination="1pK-bX-FNs" id="sjR-UU-jU8"/>
+                        <outlet property="playingCardViewTwo" destination="XA3-5M-gAq" id="s7g-hr-4aN"/>
+                        <outletCollection property="cardViews" destination="QQU-84-Sn4" collectionClass="NSMutableArray" id="MgA-ek-9Vg"/>
+                        <outletCollection property="cardViews" destination="1pK-bX-FNs" collectionClass="NSMutableArray" id="4pW-ru-V4l"/>
+                        <outletCollection property="cardViews" destination="EVh-3x-94I" collectionClass="NSMutableArray" id="EjH-sx-dGv"/>
+                        <outletCollection property="cardViews" destination="XA3-5M-gAq" collectionClass="NSMutableArray" id="8pM-2R-PcZ"/>
+                        <outletCollection property="cardViews" destination="hSR-0a-xed" collectionClass="NSMutableArray" id="ylf-Jt-dlD"/>
+                        <outletCollection property="computerCardViews" destination="57C-uR-YkB" collectionClass="NSMutableArray" id="Knw-x4-aci"/>
+                        <outletCollection property="computerCardViews" destination="5KN-H1-2h8" collectionClass="NSMutableArray" id="RWP-84-rJc"/>
+                        <outletCollection property="computerCardViews" destination="wEF-o8-fnF" collectionClass="NSMutableArray" id="Fox-J6-1Rq"/>
+                        <outletCollection property="computerCardViews" destination="ypc-k2-5Z3" collectionClass="NSMutableArray" id="3lm-ea-7QA"/>
+                        <outletCollection property="computerCardViews" destination="htU-qU-rcS" collectionClass="NSMutableArray" id="yAg-cK-boN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8CW-DF-0mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-63" y="1128"/>
+        </scene>
+        <!--Three Cards-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zeE-wM-JKj">
+                                <rect key="frame" x="16" y="20" width="343" height="593"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1b7-AV-TTi">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="84.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAYER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QJ-8B-ID6">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="84.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="j5h-1M-Oyh">
+                                        <rect key="frame" x="0.0" y="84.5" width="343" height="85"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1Z-Bq-kiY" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="85"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="mSt-Nj-zfl" appends="YES" id="Kiq-sR-LqF"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRK-CG-Sea" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="144.5" y="0.0" width="54" height="85"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZ7-Ll-rSf" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="288.5" y="0.0" width="54.5" height="85"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h59-n3-wQd">
+                                        <rect key="frame" x="0.0" y="169.5" width="343" height="84.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4af-WN-5KR">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="84.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wb-8E-Syo">
+                                                <rect key="frame" x="116" y="0.0" width="111" height="84.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bet: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-Ek-t1i">
+                                                <rect key="frame" x="232" y="0.0" width="111" height="84.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rge-Kg-7sF">
+                                        <rect key="frame" x="0.0" y="254" width="343" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPUTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsP-M4-c7W">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="85"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="Du3-Gl-3Zs">
+                                        <rect key="frame" x="0.0" y="339" width="343" height="84.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3Z-xm-p1L" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="84.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcl-og-i1i" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="144.5" y="0.0" width="54" height="84.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bL0-wy-cr5" customClass="PlayingCardView" customModule="FinalProject" customModuleProvider="target">
+                                                <rect key="frame" x="288.5" y="0.0" width="54.5" height="84.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RwE-kT-WbZ">
+                                        <rect key="frame" x="0.0" y="423.5" width="343" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnR-3z-HD9">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="85"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HaD-kj-hEA">
+                                        <rect key="frame" x="0.0" y="508.5" width="343" height="84.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAM-ec-dJ1">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="84.5"/>
+                                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="DEAL">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gameDealButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Od-Xt-eOR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xc1-z7-tV5">
+                                                <rect key="frame" x="116" y="0.0" width="111" height="84.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="BET">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gameBetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GJe-FA-gKg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ck-g3-PtJ">
+                                                <rect key="frame" x="232" y="0.0" width="111" height="84.5"/>
+                                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="RESET">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="gameResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LbG-vw-1Ww"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94932265696593454" green="1" blue="0.86055537803558357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zeE-wM-JKj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3oe-7e-L2s"/>
+                            <constraint firstItem="zeE-wM-JKj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WUY-fh-Y2U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zeE-wM-JKj" secondAttribute="trailing" constant="16" id="lMp-Ug-ci7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zeE-wM-JKj" secondAttribute="bottom" constant="5" id="nMg-Us-rlL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Three Cards" id="tlf-g1-q8f"/>
+                    <connections>
+                        <outlet property="betButton" destination="xc1-z7-tV5" id="ONd-Ks-cTF"/>
+                        <outlet property="computerScoreLabel" destination="hnR-3z-HD9" id="SFa-IC-zPl"/>
+                        <outlet property="dealButton" destination="DAM-ec-dJ1" id="jbT-I3-bQp"/>
+                        <outlet property="gameBalanceLabel" destination="5wb-8E-Syo" id="cb1-fG-vpe"/>
+                        <outlet property="gameBetLabel" destination="w3m-Ek-t1i" id="hs9-7b-z6u"/>
+                        <outlet property="playerScoreLabel" destination="4af-WN-5KR" id="4Fn-Bj-Tk3"/>
+                        <outlet property="playingCardView" destination="B1Z-Bq-kiY" id="Bat-W2-7XF"/>
+                        <outlet property="playingCardViewThree" destination="YZ7-Ll-rSf" id="tlV-X9-eVp"/>
+                        <outlet property="playingCardViewTwo" destination="RRK-CG-Sea" id="PWh-xK-DcQ"/>
+                        <outletCollection property="cardViews" destination="B1Z-Bq-kiY" collectionClass="NSMutableArray" id="4F8-kJ-BGf"/>
+                        <outletCollection property="cardViews" destination="YZ7-Ll-rSf" collectionClass="NSMutableArray" id="1Dw-vP-YGr"/>
+                        <outletCollection property="cardViews" destination="RRK-CG-Sea" collectionClass="NSMutableArray" id="ryZ-Cw-pid"/>
+                        <outletCollection property="computerCardViews" destination="Pcl-og-i1i" collectionClass="NSMutableArray" id="4cr-zM-5TN"/>
+                        <outletCollection property="computerCardViews" destination="d3Z-xm-p1L" collectionClass="NSMutableArray" id="9hX-oD-t26"/>
+                        <outletCollection property="computerCardViews" destination="bL0-wy-cr5" collectionClass="NSMutableArray" id="epc-OT-Y1n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mSt-Nj-zfl">
+                    <connections>
+                        <action selector="flipCard:" destination="BYZ-38-t0r" id="9QD-Ob-0DL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
